@@ -1,5 +1,9 @@
 # NodeJS 개발 시작하기
 
+2022년에 TypeScript로 NodeJS 개발 시작하기
+
+일부러 윈도우 환경 기준으로 설명하지만, 리눅스/맥에도 같은 방법 적용 가능
+
 ## 설치
 
 [Scoop 설치](https://scoop.sh/) : 윈도우용 CLI 인스톨러(선택사항)
@@ -107,15 +111,15 @@ dist
 
 ```json
 {
-...
-	"description": "Sample!",
+  // ...
+  "description": "Sample!",
   "author": "The Nameless One <nobody@neowiz.com>",
   "license": "UNLICENSED",
   "private": true,
   "engines": {
     "node": ">=16"
   }
-...
+  // ...
 }
 ```
 
@@ -165,11 +169,11 @@ ncu
 npx tsc --init
 ```
 
-> npx는 현재 node_modules에 설치된 실행파일을 찾아 실행하고, 없으면 캐시 폴더에 해당 툴을 설치하여 실행
+> `npx`는 현재 node_modules에 설치된 실행파일을 찾아 실행하고, 없으면 캐시 폴더에 해당 툴을 설치하여 실행
 
 #### tsconfig.json 설정
 
-JS 프로젝트라도, 기존 프로젝트라도 꼭 만듭시다!
+JS 프로젝트라도, 기존 프로젝트에도 꼭 만듭시다!
 
 ```json
 {
@@ -230,6 +234,15 @@ npm i -D @types/koa
 ```
 
 > 패키지에 타입 정의 파일(\*.d.ts)이 없는 모듈은 별도의 Type Declaration 패키지 설치
+>
+> @types/패키지명 설치
+>
+> @koa/cors 같은 패키지명은 @types/koa\_\_cors 규칙으로 설치
+> 타입을 내장한 패키지 : 좋은 모듈
+>
+> 최신 버전의 @types/패키지가 있는 모듈 : 인기 있는 모듈
+>
+> 타입이 없는 모듈 : 조심
 
 대충 Koa로 Hello, world 작성 후
 
@@ -345,7 +358,7 @@ npm i source-map-support # 런타임 디펜던시
 package.json 의 script 항목 편집
 
 ```
-    "start": "cross-env NODE_ENV=production node -r source-map-support/register dist/index.js",
+"start": "cross-env NODE_ENV=production node -r source-map-support/register dist/index.js",
 ```
 
 빌드한 소스로 소스맵 제대로 적용되었나 확인
@@ -360,7 +373,7 @@ UserService 제대로 고치고 확인
 
 ### tslib 설정
 
-빌드한 소스 파일마다 매번 require/import 되는 TS Helper 함수들 분리
+빌드한 소스 파일마다 매번 inline으로 들어가는 TS Helper 함수들 분리
 
 ```powershell
 npm i tslib # 런타임용
