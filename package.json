@@ -1,0 +1,41 @@
+{
+  "name": "learning-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node -r source-map-support/register dist/index.js",
+    "build": "rimraf dist/* && tsc",
+    "dev": "ts-node-dev --rs src/index.ts",
+    "check": "xo && tsc --noEmit",
+    "fmt": "prettier --write src/**/*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/koa": "2.13.4",
+    "cross-env": "7.0.3",
+    "prettier": "2.5.1",
+    "rimraf": "3.0.2",
+    "ts-node": "10.4.0",
+    "ts-node-dev": "1.1.8",
+    "typescript": "4.5.4",
+    "xo": "0.47.0"
+  },
+  "dependencies": {
+    "koa": "2.13.4",
+    "source-map-support": "0.5.21",
+    "tslib": "2.3.1"
+  },
+  "xo": {
+    "space": true,
+    "prettier": true,
+    "rules": {
+      "import/extensions": [
+        "error",
+        "never"
+      ]
+    }
+  }
+}
