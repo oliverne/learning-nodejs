@@ -194,23 +194,23 @@ JS 프로젝트라도, 기존 프로젝트에도 꼭 만듭시다!
 
 ### prettier 설정
 
-> VSCode Prettier 확장 설치
+> [VSCode Prettier 확장 설치](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 ```powershell
 npm i -D prettier
 touch .prettierrc # 설정파일
 ```
 
-### XO linter 설치
+### XO Linter 설치
 
-> VSCode XO 확장 설치
+> [VSCode XO 확장 설치](https://marketplace.visualstudio.com/items?itemName=bryan-chen.linter-xo-2)
 
 - ESLint 의 wrapper
-- prettier 처럼 자기 주장이 강함 : 설정이 거의 없음
+- Prettier 처럼 자기 주장이 강함 : 설정이 거의 없음
 - 코딩 컨벤션과 잠재적인 나쁜 습관들을 지적
-- 기존 소스에 eslint를 사용했으면 eslint 사용
-- 기존 소스에 tslint를 사용했으면 xo 또는 eslint로 교체
-- eslint와 xo는 둘다 동작한다면 하나만 사용. (VSCode Workspace 설정으로 가능)
+- 기존 소스에 ESLint를 사용했으면 ESLint 사용
+- 기존 소스에 TSLint를 사용했으면 XO 또는 ESLint로 교체
+- ESLint와 XO가 둘 다 동작한다면 하나만 사용. (VSCode Workspace 설정으로 가능)
 
 ```
 npm i -D xo
@@ -238,6 +238,7 @@ npm i -D @types/koa
 > @types/패키지명 설치
 >
 > @koa/cors 같은 패키지명은 @types/koa\_\_cors 규칙으로 설치
+>
 > 타입을 내장한 패키지 : 좋은 모듈
 >
 > 최신 버전의 @types/패키지가 있는 모듈 : 인기 있는 모듈
@@ -251,6 +252,8 @@ npm i -D @types/koa
 ```
 npm i -D cross-env rimraf
 ```
+
+- 환경변수 설정, 폴더 삭제 툴 추가
 
 ```json
 {
@@ -271,7 +274,7 @@ npm run start
 curl localhost:8080
 ```
 
-> tsconfig.json의 target 설정 변경해보기
+> tsconfig.json의 target 설정 변경해보기 : es2016 또는 es2018 -> async/await가 변하는 거
 
 #### 타입 체킹, 포매팅, 린팅
 
