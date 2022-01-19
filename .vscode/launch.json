@@ -27,9 +27,6 @@
 				"--inspect",
 				"--enable-source-maps"
 			]
-			// "outFiles": [
-			// 	"${workspaceFolder}/**/*.ts"
-			// ]
 		}
 	]
 }

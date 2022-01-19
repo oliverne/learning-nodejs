@@ -132,7 +132,7 @@ dist
 {
   // ...
   "description": "Sample Project",
-  "author": "The Nameless One <nobody@neowiz.com>",
+  "author": "The Nameless One <nobody@example.com>",
   "license": "UNLICENSED",
   "private": true,
   "engines": {
@@ -495,7 +495,7 @@ npm run build
 
 ### TypeScript Decorator 사용 설정
 
-TypeORM 같이 Decorator Pattern을 지원하는 라이브러리 설정
+TypeORM 같이 Decorator Pattern을 지원하는 라이브러리를 사용할 때 필요
 
 tsconfig.json 수정 : TS가 컴파일할 때 Reflection에 필요한 메타 데이터를 남김
 
@@ -519,3 +519,19 @@ import 'reflect-metadata';
 ---
 
 # 끝! 이제 서비스를 개발할 시간입니다!
+
+1. `git clone [소스저장소]`
+2. `cd [소스폴더]`
+3. `npm install`
+4. `npm run dev`
+
+---
+
+## 빠른 시작 : package.json의 scripts
+
+- 빌드 : `npm run build`
+- 빌드한 앱 실행 : `npm start`
+- 개발 서버 시작 : `npm run dev`
+- 디버거 시작 : `npm run debug`
+- 코드 스타일, 린팅, 타입 에러 체크(주로 CI 상에서 실행) : `npm run check`
+- 코드 스타일 맞춰서 파일 덮어 씌우기 : `npm run fmt`

@@ -10,9 +10,9 @@
     "start": "cross-env NODE_ENV=production node --enable-source-maps dist/index.js",
     "build": "rimraf dist/* && tsc --noEmitOnError",
     "dev": "ts-node-dev --rs src/index.ts",
+    "debug": "node -r ts-node/register --inspect-brk --enable-source-maps src/index.ts",
     "check": "prettier -c src/**/* && xo && tsc --noEmit",
-    "fmt": "prettier --write src/**/*",
-    "debug": "node -r ts-node/register --inspect-brk --enable-source-maps src/index.ts"
+    "fmt": "prettier --write src/**/*"
   },
   "keywords": [],
   "author": "oliverne <oliverne@gmail.com>",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "koa": "2.13.4",
+    "reflect-metadata": "0.1.13",
     "tslib": "2.3.1"
   },
   "xo": {
@@ -40,6 +41,14 @@
       "import/extensions": [
         "error",
         "never"
+      ],
+      "import/no-unassigned-import": [
+        "error",
+        {
+          "allow": [
+            "reflect-metadata"
+          ]
+        }
       ]
     }
   }
