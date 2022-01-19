@@ -223,7 +223,7 @@ JS 프로젝트라도, 기존 프로젝트에도 꼭 만듭시다!
     "strict": true // 기존 JS 프로젝트라면 false로
     // ...
   },
-  "include": ["src"]
+  "include": ["src/**/*"]
 }
 ```
 
@@ -316,7 +316,7 @@ npm i -D cross-env rimraf
 
 ---
 
-- tsc --noEmitOnError : 타입 체킹에 실패하면 빌드하지 않음.
+- `tsc --noEmitOnError` : 타입 체킹에 실패하면 빌드하지 않음.
 - 사실 타입이 틀려도, 런타임에 제대로 실행 될 수 있음... 자신있으면 옵션 생략 가능
 - scripts 안의 명령어는 항상 `node_modules/.bin/`에 설치된 툴을 먼저 실행해보고 없으면 시스템 환경 변수의 path를 따라감
 
@@ -334,13 +334,9 @@ curl localhost:8080
 
 #### 타입 체킹, 포매팅, 린팅
 
-> [Husky](https://www.npmjs.com/package/husky)를 이용
->
-> GIT Hook 에 npm run check 를 실행하거나
->
-> IDE에서 다해주는데... 과하다 싶으면,
->
-> CI 상에서 푸시된 소스를 체크하는 용도로
+- [Husky](https://www.npmjs.com/package/husky)를 이용 GIT Hook 으로 `npm run check`를 실행하거나,
+- IDE에서 다해주는데... 과하다 싶으면,
+- CI 상에서 푸시된 소스를 체크하는 용도로
 
 ---
 
@@ -366,7 +362,7 @@ package.json의 scripts 항목 편집
 npm run dev
 ```
 
-- 소스 편집 후 저장 -> 서버 다시 시작
+- 소스 편집 후 저장 -> 자동으로 서버 다시 시작
 - 터미널에 `rs` 입력 -> 서버 다시 시작
 
 ---
@@ -452,9 +448,9 @@ npm run debug
 
 ---
 
-크롬 또는 VScode에 Attach : `launch.json` 설정 필요
+크롬 또는 VSCode에 Attach : `launch.json` 설정 필요
 
-Attach는 터미널에서 `npm run debug` 실행 후 붙으면 되고,
+Attach는 터미널에서 `npm run debug` 실행 후 에디터에서 붙으면 됨
 
 VSCode에서 Launch : `launch.json` 설정 필요
 
@@ -471,13 +467,13 @@ VSCode에서 Launch : `launch.json` 설정 필요
 
 > --inspect 와 --inspect-brk 의 차이?
 
-에러 고치기
+브레이크 포인트를 이용하여 에러 고치기
 
 ---
 
 ### tslib 설정
 
-빌드한 소스의 각 파일마다 매번 inline으로 들어가는 TS Helper 함수들을 공통 모듈로 분리
+빌드한 소스의 각 파일마다 매번 inline으로 들어가는 TypeScript Helper 함수들을 공통 모듈로 분리
 
 ```sh
 npm i tslib # 런타임용
@@ -495,9 +491,9 @@ npm run build
 
 ### TypeScript Decorator 사용 설정
 
-TypeORM 같이 Decorator Pattern을 지원하는 라이브러리를 사용할 때 필요
+`TypeORM`처럼 Decorator Pattern을 지원하는 라이브러리를 사용할 때 필요
 
-tsconfig.json 수정 : TS가 컴파일할 때 Reflection에 필요한 메타 데이터를 남김
+tsconfig.json 수정 : TSC가 컴파일할 때 Reflection에 필요한 메타 데이터를 남김
 
 ```
 "experimentalDecorators": true,
