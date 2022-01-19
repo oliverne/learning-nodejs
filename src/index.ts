@@ -5,7 +5,7 @@ import { UserService } from './services/user-service';
 const app = new Koa();
 
 app.use(async (ctx) => {
-  const userService = new UserService('MY_TOKEN');
+  const userService = new UserService('');
   const user = await userService.verifyUser();
   ctx.body = user;
 });
