@@ -503,7 +503,7 @@ tsconfig.json 수정 : TSC가 컴파일할 때 Reflection에 필요한 메타 �
 Reflect에 필요한 helper 라이브러리 설정
 
 ```sh
-npm i reflect-metadata typeorm # 런타임 디펜던시
+npm i reflect-metadata # 런타임 디펜던시
 ```
 
 src/index.ts 편집. 최상단에 추가.
@@ -511,6 +511,8 @@ src/index.ts 편집. 최상단에 추가.
 ```js
 import 'reflect-metadata';
 ```
+
+이후 `TypeORM` 같은 라이브러리 사용 가능
 
 ---
 
